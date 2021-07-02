@@ -1,11 +1,28 @@
 {
   "name": "country-list-with-dial-code-and-flag",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Country list with dial code and flag",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "keywords": [
+    "country",
+    "flag",
+    "dial code",
+    "phone",
+    "country code",
+    "npm",
+    "javascript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/necessarylion/country-list-with-dial-code-and-flag"
+  },
+  "author": {
+    "name": "Necessary Lion",
+    "email": "hello@bilions.org",
+    "url": "https://bilions.org"
+  }
 }
