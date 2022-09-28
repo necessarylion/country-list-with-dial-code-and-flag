@@ -4,6 +4,11 @@
 
 `import CountryList from 'country-list-with-dial-code-and-flag'`
 
+```
+CountryList.findFlag('mm'); // get specific flag
+CountryList.getList(); // get all list
+```
+
 - result will be inArray
 
 ```
@@ -14,3 +19,5 @@
 ```
 
 ![Country List with flag and dial code](image.png)
+
+![](assets/png/mm.png)![](assets/png/th.png)![](assets/png/in.png)
