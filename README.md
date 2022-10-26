@@ -1,25 +1,40 @@
 # Country list with dial code and flag
 
-## Usage
+[![npm version](https://badge.fury.io/js/country-list-with-dial-code-and-flag.svg)](https://badge.fury.io/js/country-list-with-dial-code-and-flag) ![ts](https://badgen.net/badge/Built%20With/TypeScript/blue) ![ts](https://badgen.net/npm/license/lodash) ![countributers](https://badgen.net/github/contributors/necessarylion/country-list-with-dial-code-and-flag)
 
-`import CountryList from 'country-list-with-dial-code-and-flag'`
 
+This package provide all country list with their flag emoji and dial number code.
+
+## Installation
+
+```sh
+npm install country-list-with-dial-code-and-flag
 ```
-CountryList.findFlag('mm'); // get specific flag
-CountryList.getList(); // get all list
-CountryList.findFlagsByDialCode('+44') // get list of flag with dial code +44
-CountryList.findFlagByDialCode('+44') // get preferred flag with dial code +44
+
+```js
+import CountryList from 'country-list-with-dial-code-and-flag'
 ```
 
-- result will be inArray
+## Available Functions
 
+| Function | Description |
+| ------ | ------ |
+| getList | get all available flags |
+| findFlag | get specific country by 2 character country code Eg. `findFlagByDialCode('MM')` |
+| findFlagsByDialCode | get list of countries by dial code Eg. `findFlagByDialCode('+95')` |
+| findFlagByDialCode | get country by dial code Eg. `findFlagByDialCode('+95')` |
+
+## Example response
 ```
 [
  { "name": "Afghanistan", "dial_code": "+93", "code": "AF", "flag": "🇦🇫" },
- { "name": "Myanmar", "dial_code": "+95", "code": "MM", "flag": "🇲🇲" } ...
+ { "name": "Myanmar", "dial_code": "+95", "code": "MM", "flag": "🇲🇲" }
 ]
 ```
 
-![Country List with flag and dial code](image.png)
+## Development
+Want to contribute? Great!
+Fork the repo and create PR to us.
 
-![](assets/png/mm.png)![](assets/png/th.png)![](assets/png/in.png)
+###### Buy me Coffee
+[![kofi](https://badgen.net/badge/icon/kofi?icon=kofi&label)](https://ko-fi.com/zinkyawkyaw)
