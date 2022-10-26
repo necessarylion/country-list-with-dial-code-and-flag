@@ -7,6 +7,8 @@
 ```
 CountryList.findFlag('mm'); // get specific flag
 CountryList.getList(); // get all list
+CountryList.findFlagsByDialCode('+44') // get list of flag with dial code +44
+CountryList.findFlagByDialCode('+44') // get preferred flag with dial code +44
 ```
 
 - result will be inArray
