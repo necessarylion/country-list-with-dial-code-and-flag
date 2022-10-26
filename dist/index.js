@@ -1,15 +1,24 @@
 let flags = require('./data.js')
 
-let findFlag = (code, type = 'png') => {
-  return flags.find(flag => flag.code.toLowerCase() == code);
+let findFlag = (code) => {
+  return flags.find((flag) => flag.code.toLowerCase() == code)
 }
 
-let findFlagByDialCode = (dialCode, type = 'png') => {
-  return flags.find((flag) => flag.dial_code == dialCode);
-};
+let findFlagByDialCode = (dialCode) => {
+  const flags = findFlagsByDialCode(dialCode)
+  const preferredFlag = flags.find((flag) => flag.dial_code == dialCode && flag.preferred)
+  if (preferredFlag) {
+    return preferredFlag
+  }
+  return flags[0] ?? null
+}
+
+let findFlagsByDialCode = (dialCode) => {
+  return flags.filter((flag) => flag.dial_code == dialCode)
+}
 
 let getList = () => {
-  return flags; 
+  return flags
 }
 
-module.exports = { getList, findFlag, findFlagByDialCode };
+module.exports = { getList, findFlag, findFlagByDialCode, findFlagsByDialCode }
