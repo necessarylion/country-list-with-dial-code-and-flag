@@ -19,10 +19,10 @@ import CountryList from 'country-list-with-dial-code-and-flag'
 
 | Function | Description |
 | ------ | ------ |
-| getList | get all available flags |
-| findFlag | get specific country by 2 character country code Eg. `findFlagByDialCode('MM')` |
-| findFlagsByDialCode | get list of countries by dial code Eg. `findFlagByDialCode('+95')` |
-| findFlagByDialCode | get country by dial code Eg. `findFlagByDialCode('+95')` |
+| `getList` | get all available countries |
+| `findFlag` | get specific country by 2 character country code Eg. `findFlagByDialCode('MM')` |
+| `findFlagsByDialCode` | get list of countries by dial code Eg. `findFlagByDialCode('+95')` |
+| `findFlagByDialCode` | get country by dial code Eg. `findFlagByDialCode('+95')` |
 
 ## Example response
 ```
