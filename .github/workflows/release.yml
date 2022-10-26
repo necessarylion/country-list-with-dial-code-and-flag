@@ -1,11 +1,8 @@
 name: Package Publish
 
-on: 
-  push
-
-# on:
-#   release:
-#     types: [created]
+on:
+  release:
+    types: [created]
 
 jobs:
   publish:
@@ -15,9 +12,11 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: npm install
+      - name: Instal dependencies
         run: npm install
-      - name: build
+      - name: Test
+        run: npm run test
+      - name: Compile and build
         run: npm run build
       - uses: JS-DevTools/npm-publish@v1
         with:
