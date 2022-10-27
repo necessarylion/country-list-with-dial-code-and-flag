@@ -22,4 +22,14 @@ const getList = () => {
   return flags
 }
 
-export { getList, findFlag, findFlagByDialCode, findFlagsByDialCode }
+const searchFlag = (keyword: string) => {
+  return flags.filter((flag: Flag) => {
+    return (
+      flag.code.toLowerCase().includes(keyword.toLowerCase()) ||
+      flag.name.toLowerCase().includes(keyword.toLowerCase()) ||
+      flag.dial_code.toLowerCase().includes(keyword.toLowerCase())
+    )
+  })
+}
+
+export { getList, findFlag, findFlagByDialCode, findFlagsByDialCode, searchFlag }

@@ -1,4 +1,4 @@
-import { getList, findFlag, findFlagByDialCode, findFlagsByDialCode } from '../src/index'
+import { getList, findFlag, findFlagByDialCode, findFlagsByDialCode, searchFlag } from '../src/index'
 
 describe('getList', () => {
   test('getList', () => {
@@ -34,13 +34,26 @@ describe('findFlagByDialCode', () => {
   })
 
   test('findFlagByDialCode +44 return United Kingdom', () => {
-    expect(findFlagByDialCode('+44')).toEqual( { name: 'United Kingdom', dial_code: '+44', code: 'GB', preferred: true, flag: '🇬🇧' })
+    expect(findFlagByDialCode('+44')).toEqual({
+      name: 'United Kingdom',
+      dial_code: '+44',
+      code: 'GB',
+      preferred: true,
+      flag: '🇬🇧',
+    })
   })
 })
 
 describe('findFlagsByDialCode', () => {
-  test('findFlagsByDialCode type Object', () => {
-    let result = findFlagsByDialCode('+44');
+  test('findFlagsByDialCode length', () => {
+    let result = findFlagsByDialCode('+44')
     expect(result.length).toBe(4)
+  })
+})
+
+describe('searchFlag', () => {
+  test('Search Flag length', () => {
+    let result = searchFlag('Myanm')
+    expect(result).toEqual([{ name: 'Myanmar', dial_code: '+95', code: 'MM', flag: '🇲🇲' }])
   })
 })
