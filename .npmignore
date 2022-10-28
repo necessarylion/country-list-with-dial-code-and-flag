@@ -1,0 +1,9 @@
+assets
+.prettierrc
+image.png
+jest.config.js
+package-lock.json
+tslint.json
+node_modules
+.github
+__tests__
