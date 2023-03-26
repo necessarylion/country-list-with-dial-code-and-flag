@@ -36,6 +36,3 @@ import CountryList from 'country-list-with-dial-code-and-flag'
 ## Development
 Want to contribute? Great!
 Fork the repo and create PR to us.
-
-###### Buy me Coffee
-[![kofi](https://badgen.net/badge/icon/kofi?icon=kofi&label)](https://ko-fi.com/zinkyawkyaw)

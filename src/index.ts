@@ -32,4 +32,4 @@ const searchFlag = (keyword: string) => {
   })
 }
 
-export { getList, findFlag, findFlagByDialCode, findFlagsByDialCode, searchFlag }
+export { getList, findFlag, findFlagByDialCode, findFlagsByDialCode, searchFlag, Flag}
