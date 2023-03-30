@@ -61,7 +61,7 @@ const findByKeyword = (keyword: string): Array<Country> => {
   })
 }
 
-const CountryFlag = {
+const CountryList = {
   findOneByCountryCode,
   findOneByDialCode,
   findByDialCode,
@@ -71,10 +71,10 @@ const CountryFlag = {
 
 declare global {
   interface Window {
-    CountryFlag: any
+    CountryList: any
   }
 }
-window.CountryFlag = CountryFlag
+window.CountryList = CountryList
 
-export default CountryFlag
+export default CountryList
 export { Country }

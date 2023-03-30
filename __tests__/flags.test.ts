@@ -1,22 +1,22 @@
-import CountryFlag from '../src/index'
+import CountryList from '../src/index'
 
 describe('getList', () => {
   test('getList', () => {
-    expect(CountryFlag.getAll()).toBeInstanceOf(Array)
+    expect(CountryList.getAll()).toBeInstanceOf(Array)
   })
 })
 
 describe('getList', () => {
   test('findFlag type Object', () => {
-    expect(CountryFlag.findOneByCountryCode('mm')).toBeInstanceOf(Object)
+    expect(CountryList.findOneByCountryCode('mm')).toBeInstanceOf(Object)
   })
 
   test('findFlag with Capital type Object', () => {
-    expect(CountryFlag.findOneByCountryCode('MM')).toBeInstanceOf(Object)
+    expect(CountryList.findOneByCountryCode('MM')).toBeInstanceOf(Object)
   })
 
   test('findFlag return exact value', () => {
-    expect(CountryFlag.findOneByCountryCode('mm')).toEqual({
+    expect(CountryList.findOneByCountryCode('mm')).toEqual({
       name: 'Myanmar',
       dial_code: '+95',
       code: 'MM',
@@ -25,7 +25,7 @@ describe('getList', () => {
   })
 
   test('findFlag with Capital return exact value', () => {
-    expect(CountryFlag.findOneByCountryCode('MM')).toEqual({
+    expect(CountryList.findOneByCountryCode('MM')).toEqual({
       name: 'Myanmar',
       dial_code: '+95',
       code: 'MM',
@@ -36,15 +36,15 @@ describe('getList', () => {
 
 describe('findFlagByDialCode', () => {
   test('findFlagByDialCode type Object', () => {
-    expect(CountryFlag.findOneByDialCode('+95')).toBeInstanceOf(Object)
+    expect(CountryList.findOneByDialCode('+95')).toBeInstanceOf(Object)
   })
 
   test('findFlagByDialCode return exact value', () => {
-    expect(CountryFlag.findOneByDialCode('+95')).toEqual({ name: 'Myanmar', dial_code: '+95', code: 'MM', flag: '🇲🇲' })
+    expect(CountryList.findOneByDialCode('+95')).toEqual({ name: 'Myanmar', dial_code: '+95', code: 'MM', flag: '🇲🇲' })
   })
 
   test('findFlagByDialCode +44 return United Kingdom', () => {
-    expect(CountryFlag.findOneByDialCode('+44')).toEqual({
+    expect(CountryList.findOneByDialCode('+44')).toEqual({
       name: 'United Kingdom',
       dial_code: '+44',
       code: 'GB',
@@ -56,14 +56,14 @@ describe('findFlagByDialCode', () => {
 
 describe('findFlagsByDialCode', () => {
   test('findFlagsByDialCode length', () => {
-    const result = CountryFlag.findByDialCode('+44')
+    const result = CountryList.findByDialCode('+44')
     expect(result.length).toBe(4)
   })
 })
 
 describe('searchFlag', () => {
   test('Search Flag length', () => {
-    const result = CountryFlag.findByKeyword('Myanm')
+    const result = CountryList.findByKeyword('Myanm')
     expect(result).toEqual([{ name: 'Myanmar', dial_code: '+95', code: 'MM', flag: '🇲🇲' }])
   })
 })
