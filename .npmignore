@@ -8,3 +8,5 @@ node_modules
 .github
 __tests__
 !dist
+webpack.cdn.config.js
+webpack.config.js

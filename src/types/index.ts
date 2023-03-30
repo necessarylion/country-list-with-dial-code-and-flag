@@ -1,4 +1,4 @@
-interface Flag {
+interface Country {
   name: string
   dial_code: string
   code: string
@@ -6,4 +6,4 @@ interface Flag {
   preferred?: boolean
 }
 
-export { Flag }
+export { Country }
