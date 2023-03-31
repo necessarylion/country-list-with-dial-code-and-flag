@@ -11,6 +11,11 @@ This package provide all country list with their flag emoji and dial number code
 ```html
 <script src="https://cdn.jsdelivr.net/npm/country-list-with-dial-code-and-flag/dist/main.js"></script>
 ```
+##### Country Flag SVG
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/country-list-with-dial-code-and-flag/dist/country-flag-svg.js"></script>
+```
 
 #### Via NPM
 

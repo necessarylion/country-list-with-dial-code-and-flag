@@ -5,9 +5,12 @@ const pkg = require('./package.json')
 
 module.exports = {
   mode: 'production',
-  entry: './src/index.ts',
+  entry: {
+    'main': './src/index.ts',
+    'country-flag-svg': './src/flag-svg.ts',
+  },
   output: {
-    filename: 'main.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
   },
   optimization: {
@@ -29,6 +32,11 @@ module.exports = {
       template: './index.html',
     }),
   ],
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
+  },
   devServer: {
     port: 3000,
     open: true,

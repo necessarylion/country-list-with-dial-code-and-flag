@@ -12,10 +12,12 @@
     </style>
   </head>
   <body>
+    <div id="mm"></div>
   </body>
   <script src="main.js"></script>
+  <script src="country-flag-svg.js"></script>
   <script>
-   console.log(CountryList.findOneByCountryCode('mm'))
-   console.log(CountryList.findOneByDialCode('+95'))
+   const mm = CountryList.findOneByCountryCode('mm')
+   document.getElementById('mm').innerHTML = CountryFlagSvg[mm.code]
   </script>
 </html>

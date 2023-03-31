@@ -3,14 +3,22 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'production',
-  entry: './src/index.ts',
+  entry: {
+    'index': './src/index.ts',
+    'flag-svg': './src/flag-svg.ts',
+  },
+  output: {
+    filename: '[name].js',
+    path: path.resolve(__dirname, 'dist'),
+    libraryTarget: 'module'
+  },
   experiments: {
     outputModule: true,
   },
-  output: {
-    filename: 'index.js',
-    path: path.resolve(__dirname, 'dist'),
-    libraryTarget: 'module'
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
   },
   plugins: [
     new HtmlWebpackPlugin({

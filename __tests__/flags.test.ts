@@ -40,7 +40,12 @@ describe('findFlagByDialCode', () => {
   })
 
   test('findFlagByDialCode return exact value', () => {
-    expect(CountryList.findOneByDialCode('+95')).toEqual({ name: 'Myanmar', dial_code: '+95', code: 'MM', flag: '🇲🇲' })
+    expect(CountryList.findOneByDialCode('+95')).toEqual({
+      name: 'Myanmar',
+      dial_code: '+95',
+      code: 'MM',
+      flag: '🇲🇲',
+    })
   })
 
   test('findFlagByDialCode +44 return United Kingdom', () => {
