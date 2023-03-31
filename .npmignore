@@ -1,4 +1,5 @@
 assets
+src
 .prettierrc
 image.png
 jest.config.js

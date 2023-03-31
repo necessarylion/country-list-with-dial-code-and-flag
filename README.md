@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/country-list-with-dial-code-and-flag.svg)](https://badge.fury.io/js/country-list-with-dial-code-and-flag) ![ts](https://badgen.net/badge/Built%20With/TypeScript/blue) ![contributors](https://badgen.net/github/contributors/necessarylion/country-list-with-dial-code-and-flag)
 
-This package provide all country list with their flag emoji and dial number code.
+This package provide all country list with their flag emoji, flag svg and dial number code.
 
 ## Installation
 
@@ -11,10 +11,18 @@ This package provide all country list with their flag emoji and dial number code
 ```html
 <script src="https://cdn.jsdelivr.net/npm/country-list-with-dial-code-and-flag/dist/main.js"></script>
 ```
-##### Country Flag SVG
+##### Country Flag SVG (optional)
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/country-list-with-dial-code-and-flag/dist/country-flag-svg.js"></script>
+```
+
+```html
+<div id="flag"></div>
+<script>
+    const mm = window.CountryList.findOneByCountryCode('mm')
+    document.getElementById('flag').innerHTML = window.CountryFlagSvg[mm.code]
+</script>
 ```
 
 #### Via NPM
@@ -23,7 +31,7 @@ This package provide all country list with their flag emoji and dial number code
 npm install country-list-with-dial-code-and-flag
 ```
 
-```ts
+```js
 // js
 import CountryList from 'country-list-with-dial-code-and-flag'
 
@@ -35,6 +43,19 @@ CountryList.findOneByCountryCode('MM') // Response => Country
 CountryList.findOneByDialCode('+95') // Response => Country
 CountryList.findByDialCode('+95') // Response => Array<Country>
 CountryList.findByKeyword('united') // Response => Array<Country>
+```
+
+##### Country Flag SVG (optional)
+
+```js
+import CountryFlagSvg from 'country-list-with-dial-code-and-flag/dist/flag-svg'
+
+const myanmar = CountryList.findOneByCountryCode('mm')
+if(myanmar) {
+    const flagSvg = CountryFlagSvg[myanmar.code] // .js
+    const flagSvg = CountryFlagSvg[myanmar.code as never] // .ts
+    console.log(flagSvg) // it return svg string
+}
 ```
 
 ## Available Functions

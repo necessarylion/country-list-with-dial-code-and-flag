@@ -7,4 +7,4 @@ declare global {
 }
 window.CountryFlagSvg = CountryFlagSvg
 
-export { CountryFlagSvg }
+export default CountryFlagSvg

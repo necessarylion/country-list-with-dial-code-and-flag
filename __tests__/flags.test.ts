@@ -1,4 +1,5 @@
 import CountryList from '../src/index'
+import CountryFlagSvg from '../src/flag-svg'
 
 describe('getList', () => {
   test('getList', () => {
@@ -70,5 +71,15 @@ describe('searchFlag', () => {
   test('Search Flag length', () => {
     const result = CountryList.findByKeyword('Myanm')
     expect(result).toEqual([{ name: 'Myanmar', dial_code: '+95', code: 'MM', flag: '🇲🇲' }])
+  })
+})
+
+describe('test svg string', () => {
+  test('svg should return string', () => {
+    const result = CountryList.findOneByCountryCode('mm')
+    if (result) {
+      const flagSvg = CountryFlagSvg[result.code as never]
+      expect(typeof flagSvg).toBe('string')
+    }
   })
 })
