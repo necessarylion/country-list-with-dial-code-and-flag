@@ -1,5 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2">
-<rect id="green_area" width="3" height="2" fill="#009543"/>
-<path id="yellow_area" d="M 0 2 L 2 0 h 1 v 2 z" fill="#FBDE4A"/>
-<path id="red_area" d="M 3 0 v 2 h -2 z" fill="#DC241F"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 85.333 513 342"><path fill="#da1a35" d="M0 85.331h513v342H0z"/><path fill="#009543" d="M443.726 85.331 102.4 426.657H0V85.331z"/><path fill="#fbde4a" d="M500.124 85.331 158.798 426.657H11.876L353.202 85.331z"/></svg>

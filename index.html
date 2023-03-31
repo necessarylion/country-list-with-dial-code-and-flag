@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Flag</title>
+    <style>
+      body {
+        font-family: 'Source Sans Pro', sans-serif;
+        background-color: #424243;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mm"></div>
+  </body>
+  <script src="main.js"></script>
+  <script src="country-flag-svg.js"></script>
+  <script>
+   const mm = CountryList.findOneByCountryCode('mm')
+   document.getElementById('mm').innerHTML = CountryFlagSvg[mm.code]
+  </script>
+</html>

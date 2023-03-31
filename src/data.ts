@@ -1,6 +1,6 @@
-import { Flag } from './types'
+import { Country } from './types'
 
-const flags: Flag[] = [
+const countries: Country[] = [
   { name: 'Afghanistan', dial_code: '+93', code: 'AF', flag: '🇦🇫' },
   { name: 'Albania', dial_code: '+355', code: 'AL', flag: '🇦🇱' },
   { name: 'Algeria', dial_code: '+213', code: 'DZ', flag: '🇩🇿' },
@@ -245,4 +245,4 @@ const flags: Flag[] = [
   { name: 'Åland Islands', dial_code: '+358', code: 'AX', flag: '🇦🇽' },
 ]
 
-export default flags
+export default countries
