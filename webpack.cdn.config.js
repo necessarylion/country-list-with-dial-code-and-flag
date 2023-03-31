@@ -1,7 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
-const CompressionPlugin = require("compression-webpack-plugin");
 const pkg = require('./package.json')
 
 module.exports = {
@@ -32,9 +31,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './index.html',
     }),
-    new CompressionPlugin({
-      test: /\.js(\?.*)?$/i,
-    })
   ],
   performance: {
     hints: false,
