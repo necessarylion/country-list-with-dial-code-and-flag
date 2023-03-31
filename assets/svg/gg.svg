@@ -1,8 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-18 -12 36 24">
-<rect x="-18" y="-12" width="36" height="24" fill="white"/>
-<path d="M 0,-12 v 24 M -18,0 h 36" stroke="#e8112d" stroke-width="6" fill="none"/>
-<path id="arm" d="M -9,2 l 1,-1 h 9 v -2 h -9 l -1,-1 z" fill="#f9dd16"/>
-<use xlink:href="#arm" transform="rotate(90)"/>
-<use xlink:href="#arm" transform="rotate(-90)"/>
-<use xlink:href="#arm" transform="rotate(180)"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 513 342"><path fill="#FFF" d="M0 0h513v342H0z"/><path fill="#D80027" d="M308 0H204v118.7H0v104h204V342h104V222.7h205v-104H308z"/><path fill="#FFDA44" d="m368.6 188 26 17.3V136l-26 17.3h-95.3V58.1l17.3-26h-69.2l17.3 26v95.2h-95.3l-26-17.3v69.3l26-17.3h95.3v95.2l-17.3 26h69.2l-17.3-26V188z"/></svg>

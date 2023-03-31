@@ -1,12 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 18 12">
-<rect width="18" height="6" fill="#FECB00"/>
-<rect width="18" height="6" y="6" fill="#EA2839"/>
-<rect width="18" height="4" y="4" fill="#34B233"/>
-<g transform="translate(9,6.422)scale(4.422)">
-<polygon id="pt" points="-0.3249196962329062,0 0,-1 0.3249196962329062,0" fill="#FFF"/>
-<use xlink:href="#pt" transform="rotate(-144)"/>
-<use xlink:href="#pt" transform="rotate(-72)"/>
-<use xlink:href="#pt" transform="rotate(72)"/>
-<use xlink:href="#pt" transform="rotate(144)"/>
-</g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 85.333 512 341.333"><path fill="#6DA544" d="M0 85.337h512v341.326H0z"/><path fill="#FFDA44" d="M0 85.337h512v113.775H0z"/><path fill="#D80027" d="M0 312.888h512v113.775H0z"/><path fill="#FFF" d="M384 227.261h-97.783L256 134.265l-30.217 92.997H128l79.108 57.475-30.217 92.998L256 320.925l79.108 56.81-30.217-92.998L384 227.261z"/></svg>

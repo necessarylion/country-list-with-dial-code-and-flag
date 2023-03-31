@@ -1,16 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 72 36">
-<rect fill="#024FA2" width="72" height="36"/>
-<rect fill="#fff" y="6" width="72" height="24"/>
-<rect fill="#ED1C27" y="7" width="72" height="22"/>
-<circle fill="#fff" cx="24" cy="18" r="8"/>
-<g id="star" transform="translate(24,18) scale(7.75)" fill="#ED1C27">
-<g id="cone">
-<polygon id="triangle" points="0,0 0,1 .5,1" transform="translate(0,-1) rotate(18)"/>
-<use xlink:href="#triangle" transform="scale(-1,1)" id="use12"/>
-</g>
-<use xlink:href="#cone" transform="rotate(72)" id="use14"/>
-<use xlink:href="#cone" transform="rotate(-72)" id="use16"/>
-<use xlink:href="#cone" transform="rotate(144)" id="use18"/>
-<use xlink:href="#cone" transform="rotate(-144)" id="use20"/>
-</g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 85.333 512 341.333"><path fill="#91DC5A" d="M0 85.331h512v341.337H0z"/><path fill="#FFF" d="M0 85.331h512v341.337H0z"/><g fill="#0052B4"><path d="M0 85.331h512v57.188H0zM0 369.48h512v57.177H0z"/></g><path fill="#D80027" d="M0 165.215h512v181.582H0z"/><circle fill="#FFF" cx="190.33" cy="255.994" r="65.668"/><path fill="#D80027" d="m190.332 190.332 14.734 45.346h47.757l-38.65 28.028 14.849 45.481-38.69-28.16-38.631 28.107 14.79-45.428-38.616-28.028h47.722z"/></svg>
