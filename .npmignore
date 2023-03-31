@@ -11,3 +11,5 @@ __tests__
 !dist
 webpack.cdn.config.js
 webpack.config.js
+.husky
+index.html
