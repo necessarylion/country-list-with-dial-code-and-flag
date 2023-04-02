@@ -11,6 +11,7 @@ This package provide all country list with their flag emoji, flag svg and dial n
 ```html
 <script src="https://cdn.jsdelivr.net/npm/country-list-with-dial-code-and-flag/dist/main.js"></script>
 ```
+
 ##### Country Flag SVG (optional)
 
 ```html
@@ -20,8 +21,8 @@ This package provide all country list with their flag emoji, flag svg and dial n
 ```html
 <div id="flag"></div>
 <script>
-    const mm = window.CountryList.findOneByCountryCode('mm')
-    document.getElementById('flag').innerHTML = window.CountryFlagSvg[mm.code]
+  const mm = window.CountryList.findOneByCountryCode('mm')
+  document.getElementById('flag').innerHTML = window.CountryFlagSvg[mm.code]
 </script>
 ```
 
@@ -51,14 +52,15 @@ CountryList.findByKeyword('united') // Response => Array<Country>
 import CountryFlagSvg from 'country-list-with-dial-code-and-flag/dist/flag-svg'
 
 const myanmar = CountryList.findOneByCountryCode('mm')
-if(myanmar) {
-    const flagSvg = CountryFlagSvg[myanmar.code] // .js
-    const flagSvg = CountryFlagSvg[myanmar.code as never] // .ts
-    console.log(flagSvg) // it return svg string
+if (myanmar) {
+  const flagSvg = CountryFlagSvg[myanmar.code] // .js
+  console.log(flagSvg) // it return svg string
 }
 ```
 
 ## Available Functions
+
+### CountryList
 
 | Function               | Description                        |
 | ---------------------- | ---------------------------------- |
@@ -67,6 +69,31 @@ if(myanmar) {
 | `findOneByDialCode`    | find country by dial code Eg.      |
 | `findByDialCode`       | find countries by dial code Eg.    |
 | `findByKeyword`        | find countries with keyword Eg.    |
+
+### Country
+
+| Function / Attribute       | Description                        |
+| -------------------------- | ---------------------------------- |
+| `formatPhoneNumber(phone)` | format phone number with dial code |
+| `name`                     | get name attr from country         |
+| `dialCode` or `dial_code`  | get name dial code from country    |
+| `code`                     | get code attr from country         |
+| `flag`                     | get flag emoji attr from country   |
+| `preferred`                | get preferred attr from country    |
+
+#### Sample Usage of `formatPhoneNumber()`
+
+```js
+import CountryList from 'country-list-with-dial-code-and-flag'
+
+const mm = CountryList.findOneByCountryCode('mm')
+if (mm) {
+    mm.formatPhoneNumber('0888888888') // +95888888888
+    mm.formatPhoneNumber('+95888888888') // +95888888888
+    mm.formatPhoneNumber('888888888') // +95888888888
+    mm.formatPhoneNumber('088-888-888-8') // +95888888888
+}
+```
 
 ## Example response
 

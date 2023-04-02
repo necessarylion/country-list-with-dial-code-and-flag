@@ -1,10 +1,12 @@
-import * as CountryFlagSvg from './svg'
+import * as Svg from './svg'
+import { CountryFlagSvgInterface } from './types'
+
+const CountryFlagSvg = Svg as unknown as CountryFlagSvgInterface
 
 declare global {
   interface Window {
-    CountryFlagSvg: any
+    CountryFlagSvg: CountryFlagSvgInterface
   }
 }
 window.CountryFlagSvg = CountryFlagSvg
-
 export default CountryFlagSvg

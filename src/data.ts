@@ -1,6 +1,6 @@
-import { Country } from './types'
+import { CountryInterface } from './types'
 
-const countries: Country[] = [
+const countries: CountryInterface[] = [
   { name: 'Afghanistan', dial_code: '+93', code: 'AF', flag: '🇦🇫' },
   { name: 'Albania', dial_code: '+355', code: 'AL', flag: '🇦🇱' },
   { name: 'Algeria', dial_code: '+213', code: 'DZ', flag: '🇩🇿' },
