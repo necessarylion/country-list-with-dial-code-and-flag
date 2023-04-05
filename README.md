@@ -6,11 +6,7 @@ This package provide all country list with their flag emoji, flag svg and dial n
 
 ## Demo 
 
-##### SVG
-<img width="500" src="https://raw.githubusercontent.com/necessarylion/country-list-with-dial-code-and-flag/master/demo/svg.png" />
-
-##### Emoji
-<img width="500" src="https://raw.githubusercontent.com/necessarylion/country-list-with-dial-code-and-flag/master/demo/emoji.png" />
+<img width="300" src="https://raw.githubusercontent.com/necessarylion/country-list-with-dial-code-and-flag/master/demo/svg.png" /><img width="300" src="https://raw.githubusercontent.com/necessarylion/country-list-with-dial-code-and-flag/master/demo/emoji.png" />
 
 ## Installation
 
