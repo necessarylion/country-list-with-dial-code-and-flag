@@ -4,6 +4,14 @@
 
 This package provide all country list with their flag emoji, flag svg and dial number code.
 
+## Demo 
+
+##### SVG
+<img width="500" src="./demo/svg.png" />
+
+##### Emoji
+<img width="500" src="./demo/emoji.png" />
+
 ## Installation
 
 #### Via CDN
