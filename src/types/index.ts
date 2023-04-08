@@ -5,6 +5,8 @@ interface CountryInterface {
   flag: string
   preferred?: boolean
   secondary?: boolean
+  area_codes?: Array<string>
+  country_code?: string
 }
 
 interface CountryFlagSvgInterface {
