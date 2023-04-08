@@ -4,10 +4,17 @@ interface CountryInterface {
   code: string
   flag: string
   preferred?: boolean
+  secondary?: boolean
+  area_codes?: Array<string>
+  country_code?: string
 }
 
 interface CountryFlagSvgInterface {
   [key: string]: string
 }
 
-export { CountryInterface, CountryFlagSvgInterface }
+interface filterOption {
+  withSecondary: boolean
+}
+
+export { CountryInterface, CountryFlagSvgInterface, filterOption }

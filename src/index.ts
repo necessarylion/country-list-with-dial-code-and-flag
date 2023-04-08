@@ -1,6 +1,6 @@
 import { Country } from './country'
 import countries from './data'
-import { CountryInterface } from './types'
+import { CountryInterface, filterOption } from './types'
 
 class App {
   /**
@@ -10,13 +10,10 @@ class App {
    * @returns {Country | undefined}
    */
   public findOneByCountryCode(code: string): Country | undefined {
-    const data = countries.find((country: CountryInterface) => {
-      return country.code.toLowerCase() === code.toLowerCase()
+    const filteredCountries = this.findByCountryCode(code)
+    return filteredCountries.find((country: Country) => {
+      return !country.secondary
     })
-    if (!data) {
-      return undefined
-    }
-    return new Country(data)
   }
 
   /**
@@ -27,13 +24,21 @@ class App {
    */
   public findOneByDialCode(dialCode: string): Country | undefined {
     const filteredCountries = this.findByDialCode(dialCode)
-    const preferred = filteredCountries.find((country: Country) => {
-      return country.dialCode === dialCode && country.preferred
-    })
+    const preferred = filteredCountries.find((country: Country) => country.preferred)
     if (preferred) {
       return preferred
     }
     return filteredCountries[0] ?? undefined
+  }
+
+  /**
+   * Find list of countries by country code code
+   *
+   * @param {string} code
+   * @returns {Array<Country>}
+   */
+  public findByCountryCode(code: string, option?: filterOption): Array<Country> {
+    return this.getAll(option).filter((country: Country) => country.code.toLowerCase() === code.toLowerCase())
   }
 
   /**
@@ -43,18 +48,7 @@ class App {
    * @returns {Array<Country>}
    */
   public findByDialCode(dialCode: string): Array<Country> {
-    return countries
-      .filter((country: CountryInterface) => country.dial_code === dialCode)
-      .map((data: CountryInterface) => new Country(data))
-  }
-
-  /**
-   * get all countries
-   *
-   * @returns {Array<Country>}
-   */
-  public getAll(): Array<Country> {
-    return countries.map((data: CountryInterface) => new Country(data))
+    return this.getAll().filter((country: Country) => country.dialCode === dialCode)
   }
 
   /**
@@ -63,16 +57,27 @@ class App {
    * @param {string} keyword
    * @returns {Array<Country>}
    */
-  public findByKeyword(keyword: string): Array<Country> {
-    return countries
-      .filter((country: CountryInterface) => {
-        return (
-          country.code.toLowerCase().includes(keyword.toLowerCase()) ||
-          country.name.toLowerCase().includes(keyword.toLowerCase()) ||
-          country.dial_code.toLowerCase().includes(keyword.toLowerCase())
-        )
-      })
-      .map((data: CountryInterface) => new Country(data))
+  public findByKeyword(keyword: string, option?: filterOption): Array<Country> {
+    return this.getAll(option).filter((country: Country) => {
+      return (
+        country.code.toLowerCase().includes(keyword.toLowerCase()) ||
+        country.name.toLowerCase().includes(keyword.toLowerCase()) ||
+        country.dialCode.toLowerCase().includes(keyword.toLowerCase())
+      )
+    })
+  }
+
+  /**
+   * get all countries
+   *
+   * @returns {Array<Country>}
+   */
+  public getAll(option?: filterOption): Array<Country> {
+    let list = countries
+    if (option && !option.withSecondary) {
+      list = countries.filter((country) => !country.secondary)
+    }
+    return list.map((data: CountryInterface) => new Country(data))
   }
 }
 
