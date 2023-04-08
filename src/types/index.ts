@@ -4,6 +4,7 @@ interface CountryInterface {
   code: string
   flag: string
   preferred?: boolean
+  secondary?: boolean
 }
 
 interface CountryFlagSvgInterface {
