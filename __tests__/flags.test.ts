@@ -7,6 +7,20 @@ describe('getList', () => {
   })
 })
 
+describe('multiple area code', () => {
+  test('withSecondary true', () => {
+    const result = CountryList.findByCountryCode('DO', { withSecondary: true })
+    expect(result).toBeInstanceOf(Array)
+    expect(result.length).toBe(3)
+  })
+
+  test('withSecondary false', () => {
+    const result = CountryList.findByCountryCode('DO', { withSecondary: false })
+    expect(result).toBeInstanceOf(Array)
+    expect(result.length).toBe(1)
+  })
+})
+
 describe('getList', () => {
   test('findFlag type Object', () => {
     expect(CountryList.findOneByCountryCode('mm')).toBeInstanceOf(Country)

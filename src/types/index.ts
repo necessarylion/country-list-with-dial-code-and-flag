@@ -11,4 +11,8 @@ interface CountryFlagSvgInterface {
   [key: string]: string
 }
 
-export { CountryInterface, CountryFlagSvgInterface }
+interface filterOption {
+  withSecondary: boolean
+}
+
+export { CountryInterface, CountryFlagSvgInterface, filterOption }

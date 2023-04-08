@@ -61,7 +61,7 @@ import CountryFlagSvg from 'country-list-with-dial-code-and-flag/dist/flag-svg'
 
 const myanmar = CountryList.findOneByCountryCode('mm')
 if (myanmar) {
-  const flagSvg = CountryFlagSvg[myanmar.code] // .js
+  const flagSvg = CountryFlagSvg[myanmar.code]
   console.log(flagSvg) // it return svg string
 }
 ```
@@ -70,13 +70,29 @@ if (myanmar) {
 
 ### CountryList
 
-| Function               | Description                        |
-| ---------------------- | ---------------------------------- |
-| `getAll`               | get all available countries        |
-| `findOneByCountryCode` | find country by ISO 3166-1 alpha-2 |
-| `findOneByDialCode`    | find country by dial code Eg.      |
-| `findByDialCode`       | find countries by dial code Eg.    |
-| `findByKeyword`        | find countries with keyword Eg.    |
+| Function               | Description                          |
+| ---------------------- | ------------------------------------ |
+| `getAll`               | get all available countries          |
+| `findOneByCountryCode` | find country by ISO 3166-1 alpha-2   |
+| `findByCountryCode`    | find countries by ISO 3166-1 alpha-2 |
+| `findOneByDialCode`    | find country by dial code Eg.        |
+| `findByDialCode`       | find countries by dial code Eg.      |
+| `findByKeyword`        | find countries with keyword Eg.      |
+
+`getAll()`, `findByKeyword()`, `findByCountryCode()` functions support filter option for secondary dial code.
+As a default `withSecondary` is `true`
+
+Example. 
+
+```js
+
+const list = CountryList.findByCountryCode('DO', {withSecondary: false})
+console.log(list.length) // 1
+
+const list = CountryList.findByCountryCode('DO', {withSecondary: true})
+console.log(list.length) // 3
+
+```
 
 ### Country
 

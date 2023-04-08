@@ -31,6 +31,10 @@ class Country {
     return this.data.preferred ?? false
   }
 
+  public get secondary(): boolean {
+    return this.data.secondary ?? false
+  }
+
   public formatPhoneNumber(phoneNumber: string | number) {
     phoneNumber = phoneNumber.toString()
     phoneNumber = phoneNumber.replace(/[^\d+]/g, '')
