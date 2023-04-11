@@ -1,4 +1,5 @@
-import { CountryInterface } from './types'
+import { PhoneNumber } from './phone-number'
+import { CountryInterface, PhoneNumberFormat } from './types'
 
 class Country {
   private data: CountryInterface
@@ -43,16 +44,8 @@ class Country {
     return this.data.country_code ?? this.data.dial_code
   }
 
-  public formatPhoneNumber(phoneNumber: string | number) {
-    phoneNumber = phoneNumber.toString()
-    phoneNumber = phoneNumber.replace(/[^\d+]/g, '')
-    if (phoneNumber.charAt(0) === '0') {
-      phoneNumber = phoneNumber.slice(1)
-    }
-    if (phoneNumber.charAt(0) === '+') {
-      return phoneNumber
-    }
-    return this.dialCode + phoneNumber
+  public formatPhoneNumber(phoneNumber: string | number, type?: PhoneNumberFormat) {
+    return PhoneNumber.parse(phoneNumber).type(type).format(this.dialCode)
   }
 }
 

@@ -17,4 +17,10 @@ interface filterOption {
   withSecondary: boolean
 }
 
-export { CountryInterface, CountryFlagSvgInterface, filterOption }
+enum PhoneNumberFormat {
+  DEFAULT = 0,
+  READABLE,
+  READABLE_WITH_DIAL_CODE,
+}
+
+export { CountryInterface, CountryFlagSvgInterface, filterOption, PhoneNumberFormat }

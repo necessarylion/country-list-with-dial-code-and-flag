@@ -38,7 +38,9 @@ class App {
    * @returns {Array<Country>}
    */
   public findByCountryCode(code: string, option?: filterOption): Array<Country> {
-    return this.getAll(option).filter((country: Country) => country.code.toLowerCase() === code.toLowerCase())
+    return this.getAll(option).filter(
+      (country: Country) => country.code.toLowerCase() === code.toLowerCase(),
+    )
   }
 
   /**
