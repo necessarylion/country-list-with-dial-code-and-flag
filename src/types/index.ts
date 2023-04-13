@@ -13,14 +13,8 @@ interface CountryFlagSvgInterface {
   [key: string]: string
 }
 
-interface filterOption {
+interface FilterOption {
   withSecondary: boolean
 }
 
-enum PhoneNumberFormat {
-  DEFAULT = 0,
-  READABLE,
-  READABLE_WITH_DIAL_CODE,
-}
-
-export { CountryInterface, CountryFlagSvgInterface, filterOption, PhoneNumberFormat }
+export { CountryInterface, CountryFlagSvgInterface, FilterOption }

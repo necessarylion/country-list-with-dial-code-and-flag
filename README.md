@@ -4,12 +4,14 @@
 
 This package provide all country list with their flag emoji, flag svg and dial number code.
 
-## Demo 
+## Demo
 
 ##### SVG
+
 <img width="500" src="https://raw.githubusercontent.com/necessarylion/country-list-with-dial-code-and-flag/master/demo/svg.png" />
 
 ##### EMOJI
+
 <img width="500" src="https://raw.githubusercontent.com/necessarylion/country-list-with-dial-code-and-flag/master/demo/emoji.png" />
 
 ## Installation
@@ -82,42 +84,53 @@ if (myanmar) {
 `getAll()`, `findByKeyword()`, `findByCountryCode()` functions support filter option for secondary dial code.
 As a default `withSecondary` is `true`
 
-Example. 
+Example.
 
 ```js
-
-const list = CountryList.findByCountryCode('DO', {withSecondary: false})
+const list = CountryList.findByCountryCode('DO', { withSecondary: false })
 console.log(list.length) // 1
 
-const list = CountryList.findByCountryCode('DO', {withSecondary: true})
+const list = CountryList.findByCountryCode('DO', { withSecondary: true })
 console.log(list.length) // 3
-
 ```
 
 ### Country
 
-| Function / Attribute       | Description                        |
-| -------------------------- | ---------------------------------- |
-| `formatPhoneNumber(phone)` | format phone number with dial code |
-| `name`                     | get name attr from country         |
-| `dialCode` or `dial_code`  | get name dial code from country    |
-| `code`                     | get code attr from country         |
-| `flag`                     | get flag emoji attr from country   |
-| `preferred`                | get preferred attr from country    |
+| Function / Attribute                | Description                                                                 |
+| ----------------------------------- | --------------------------------------------------------------------------- |
+| `formatPhoneNumber(phone, format?)` | format phone number with dial code, second param accept `PhoneNumberFormat` |
+| `name`                              | get name attr from country                                                  |
+| `dialCode` or `dial_code`           | get name dial code from country                                             |
+| `code`                              | get code attr from country                                                  |
+| `flag`                              | get flag emoji attr from country                                            |
+| `preferred`                         | get preferred attr from country                                             |
 
 #### Sample Usage of `formatPhoneNumber()`
 
 ```js
-import CountryList from 'country-list-with-dial-code-and-flag'
+import CountryList , { PhoneNumberFormat } from 'country-list-with-dial-code-and-flag'
 
 const mm = CountryList.findOneByCountryCode('mm')
 if (mm) {
-    mm.formatPhoneNumber('0888888888') // +95888888888
-    mm.formatPhoneNumber('+95888888888') // +95888888888
-    mm.formatPhoneNumber('888888888') // +95888888888
-    mm.formatPhoneNumber('088-888-888-8') // +95888888888
+  mm.formatPhoneNumber('0888888888') // +95888888888
+  mm.formatPhoneNumber('+95888888888') // +95888888888
+  mm.formatPhoneNumber('888888888') // +95888888888
+  mm.formatPhoneNumber('088-888-888-8') // +95888888888
 }
+
+____
+
+const us = CountryList.findOneByCountryCode('us')
+if (us) {
+  us.formatPhoneNumber('2124567890', PhoneNumberFormat.E164) // +12124567890
+  us.formatPhoneNumber('2124567890', PhoneNumberFormat.INTERNATIONAL) // +1 212-456-7890
+  us.formatPhoneNumber('2124567890', PhoneNumberFormat.NATIONAL) // (212) 456-7890
+  us.formatPhoneNumber('2124567890', PhoneNumberFormat.RFC3966) // tel:+1-212-456-7890
+}
+
 ```
+
+Note - `formatPhoneNumber()` use `google-libphonenumber` package. For more information, please visit to original [documentation](https://www.npmjs.com/package/google-libphonenumber).
 
 ## Example response
 

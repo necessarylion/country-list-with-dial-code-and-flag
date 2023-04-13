@@ -1,4 +1,4 @@
-import CountryList, { Country } from '../src/index'
+import CountryList, { Country, PhoneNumberFormat } from '../src/index'
 import CountryFlagSvg from '../src/flag-svg'
 
 describe('getList', () => {
@@ -99,5 +99,32 @@ describe('test svg string', () => {
       const flagSvg = CountryFlagSvg[result.code]
       expect(typeof flagSvg).toBe('string')
     }
+  })
+})
+
+describe('Phone number formatter', () => {
+  test('PhoneNumberFormat', () => {
+    const us = CountryList.findOneByCountryCode('US')
+
+    expect(us?.formatPhoneNumber('2124567890', PhoneNumberFormat.E164)).toEqual('+12124567890')
+
+    expect(us?.formatPhoneNumber('2124567890', PhoneNumberFormat.INTERNATIONAL)).toEqual(
+      '+1 212-456-7890',
+    )
+
+    expect(us?.formatPhoneNumber('2124567890', PhoneNumberFormat.NATIONAL)).toEqual(
+      '(212) 456-7890',
+    )
+
+    expect(us?.formatPhoneNumber('2124567890', PhoneNumberFormat.RFC3966)).toEqual(
+      'tel:+1-212-456-7890',
+    )
+
+    const pr = CountryList.findOneByCountryCode('PR')
+    expect(pr?.formatPhoneNumber('5303334', PhoneNumberFormat.INTERNATIONAL)).toEqual(
+      '+1 939-530-3334',
+    )
+
+    expect(pr?.formatPhoneNumber('05303334', PhoneNumberFormat.NATIONAL)).toEqual('(939) 530-3334')
   })
 })

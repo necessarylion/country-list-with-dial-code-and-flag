@@ -1,6 +1,7 @@
 import { Country } from './country'
 import countries from './data'
-import { CountryInterface, filterOption } from './types'
+import { CountryInterface, FilterOption } from './types'
+import { PhoneNumberFormat, PhoneNumberUtil } from 'google-libphonenumber'
 
 class App {
   /**
@@ -37,7 +38,7 @@ class App {
    * @param {string} code
    * @returns {Array<Country>}
    */
-  public findByCountryCode(code: string, option?: filterOption): Array<Country> {
+  public findByCountryCode(code: string, option?: FilterOption): Array<Country> {
     return this.getAll(option).filter(
       (country: Country) => country.code.toLowerCase() === code.toLowerCase(),
     )
@@ -59,7 +60,7 @@ class App {
    * @param {string} keyword
    * @returns {Array<Country>}
    */
-  public findByKeyword(keyword: string, option?: filterOption): Array<Country> {
+  public findByKeyword(keyword: string, option?: FilterOption): Array<Country> {
     return this.getAll(option).filter((country: Country) => {
       return (
         country.code.toLowerCase().includes(keyword.toLowerCase()) ||
@@ -74,7 +75,7 @@ class App {
    *
    * @returns {Array<Country>}
    */
-  public getAll(option?: filterOption): Array<Country> {
+  public getAll(option?: FilterOption): Array<Country> {
     let list = countries
     if (option && !option.withSecondary) {
       list = countries.filter((country) => !country.secondary)
@@ -94,4 +95,4 @@ declare global {
 window.CountryList = CountryList
 
 export default CountryList
-export { Country }
+export { Country, FilterOption, PhoneNumberFormat, PhoneNumberUtil }
