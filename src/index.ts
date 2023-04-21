@@ -1,9 +1,9 @@
 import { Country } from './country'
 import countries from './data'
 import { CountryInterface, FilterOption } from './types'
-import { PhoneNumberFormat, PhoneNumberUtil } from 'google-libphonenumber'
 
 class App {
+  public phoneNumberUtil: any
   /**
    * find one by ISO 3166-1 alpha-2 eg. US, MM
    *
@@ -82,6 +82,14 @@ class App {
     }
     return list.map((data: CountryInterface) => new Country(data))
   }
+
+  /**
+   * set phone number util to use phone number formatter
+   * @param phoneNumberUtil
+   */
+  public setPhoneNumberUtil(phoneNumberUtil: any) {
+    this.phoneNumberUtil = phoneNumberUtil
+  }
 }
 
 const CountryList = new App()
@@ -95,4 +103,4 @@ declare global {
 window.CountryList = CountryList
 
 export default CountryList
-export { Country, FilterOption, PhoneNumberFormat, PhoneNumberUtil }
+export { Country, FilterOption }

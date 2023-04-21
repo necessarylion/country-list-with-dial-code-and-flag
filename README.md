@@ -107,8 +107,17 @@ console.log(list.length) // 3
 
 #### Sample Usage of `formatPhoneNumber()`
 
+```bash
+npm i google-libphonenumber 
+npm i --save-dev @types/google-libphonenumber  // require for typescript
+```
+
 ```js
 import CountryList , { PhoneNumberFormat } from 'country-list-with-dial-code-and-flag'
+import { PhoneNumberUtil, PhoneNumberFormat } from 'google-libphonenumber'
+
+// required from version 5.0 due to performance issue
+CountryList.setPhoneNumberUtil(PhoneNumberUtil.getInstance()) 
 
 const mm = CountryList.findOneByCountryCode('mm')
 if (mm) {
