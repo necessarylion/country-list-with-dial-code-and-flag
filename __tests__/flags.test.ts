@@ -1,5 +1,8 @@
-import CountryList, { Country, PhoneNumberFormat } from '../src/index'
+import CountryList, { Country } from '../src/index'
 import CountryFlagSvg from '../src/flag-svg'
+import { PhoneNumberUtil, PhoneNumberFormat } from 'google-libphonenumber'
+
+CountryList.setPhoneNumberUtil(PhoneNumberUtil.getInstance())
 
 describe('getList', () => {
   test('getList', () => {

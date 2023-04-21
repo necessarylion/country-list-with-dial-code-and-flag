@@ -1,13 +1,11 @@
 import { CountryInterface } from './types'
-import { PhoneNumberFormat, PhoneNumberUtil } from 'google-libphonenumber'
+import CountryList from '.'
 
 class Country {
   private data: CountryInterface
-  private phoneUtil: PhoneNumberUtil
 
   constructor(data: CountryInterface) {
     this.data = data
-    this.phoneUtil = PhoneNumberUtil.getInstance()
   }
 
   public get name(): string {
@@ -46,12 +44,18 @@ class Country {
     return this.data.country_code ?? this.data.dial_code
   }
 
-  public formatPhoneNumber(phoneNumber: string | number, format?: PhoneNumberFormat) {
-    const number = this.phoneUtil.parseAndKeepRawInput(
+  public formatPhoneNumber(phoneNumber: string | number, format?: any) {
+    if (!CountryList.phoneNumberUtil) {
+      console.warn(
+        'PhoneNumberUtil is not being use please check our documentation for more detail',
+      )
+      return
+    }
+    const number = CountryList.phoneNumberUtil.parseAndKeepRawInput(
       this.parsePhoneNumber(phoneNumber),
       this.code.toUpperCase(),
     )
-    return this.phoneUtil.format(number, format ?? PhoneNumberFormat.E164)
+    return CountryList.phoneNumberUtil.format(number, format ?? 0)
   }
 
   private parsePhoneNumber(phoneNumber: string | number): string {
