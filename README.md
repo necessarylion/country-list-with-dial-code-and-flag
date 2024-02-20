@@ -4,7 +4,7 @@
 
 This package provide all country list with their flag emoji, flag svg and dial number code.
 
-## [Full Documentation](https://country-flag.zinkyawkyaw.dev/)
+## [Full Documentation](https://zin-kyaw-kyaw.gitbook.io/country/)
 
 ## Installation
 
