@@ -17,7 +17,15 @@ npm install country-list-with-dial-code-and-flag
 #### Via CDN
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/country-list-with-dial-code-and-flag/dist/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/country-list-with-dial-code-and-flag@latest/dist/main.js"></script>
+
+https://cdn.jsdelivr.net/npm/country-list-with-dial-code-and-flag@latest/dist/main.js
+```
+
+##### With specific version number
+
+```bash
+https://cdn.jsdelivr.net/npm/country-list-with-dial-code-and-flag@5.0.4/dist/main.js
 ```
 
 ##### Country Flag SVG (optional)
