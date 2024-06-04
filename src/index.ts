@@ -135,7 +135,9 @@ declare global {
   }
 }
 
-window.CountryList = CountryList
+if (typeof window !== 'undefined') {
+  window.CountryList = CountryList
+}
 
 export default CountryList
 export { Country, FilterOption }
