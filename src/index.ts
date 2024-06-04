@@ -1,6 +1,6 @@
 import { Country } from './country'
 import countries from './data'
-import { CountryInterface, FilterOption } from './types'
+import { CountryInterface, FilterOption, GroupedCountries } from './types'
 
 class App {
   public phoneNumberUtil: any
@@ -81,6 +81,23 @@ class App {
       list = countries.filter((country) => !country.secondary)
     }
     return list.map((data: CountryInterface) => new Country(data))
+  }
+
+  /**
+   * Group countries by the first letter of their name
+   * @param array
+   * @returns
+   */
+  public getCountriesGroupedByName(): GroupedCountries {
+    const grouped: Record<string, Country[]> = {}
+    this.getAll().forEach((country) => {
+      const firstLetter = country.name.charAt(0).toLowerCase()
+      if (!grouped[firstLetter]) {
+        grouped[firstLetter] = []
+      }
+      grouped[firstLetter].push(country)
+    })
+    return grouped
   }
 
   /**

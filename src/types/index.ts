@@ -17,4 +17,8 @@ interface FilterOption {
   withSecondary: boolean
 }
 
-export { CountryInterface, CountryFlagSvgInterface, FilterOption }
+type GroupedCountries = {
+  [key: string]: CountryInterface[]
+}
+
+export { CountryInterface, CountryFlagSvgInterface, FilterOption, GroupedCountries }
