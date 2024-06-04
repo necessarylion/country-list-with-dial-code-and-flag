@@ -14,6 +14,25 @@ This package provide all country list with their flag emoji, flag svg and dial n
 npm install country-list-with-dial-code-and-flag
 ```
 
+```ts
+import CountryList from 'country-list-with-dial-code-and-flag'
+
+CountryList.getAll() 
+// Response => Array<Country>
+
+CountryList.findOneByCountryCode('MM') 
+// Response => Country
+
+CountryList.findOneByDialCode('+95') 
+// Response => Country
+
+CountryList.findByDialCode('+95') 
+// Response => Array<Country>
+
+CountryList.findByKeyword('united') 
+// Response => Array<Country>
+```
+
 #### Via CDN
 
 ```html
