@@ -84,29 +84,28 @@ class App {
   }
 
   /**
+   * Group countries by the first letter of their name
+   * @param array
+   * @returns {GroupedCountries}
+   */
+  public groupCountriesByFirstLetter(array?: Country[] | CountryInterface[]): GroupedCountries {
+    const grouped: Record<string, Country[]> = {}
+    this.getAll().forEach((country) => {
+      const firstLetter = country.name.charAt(0).toLowerCase()
+      if (!grouped[firstLetter]) {
+        grouped[firstLetter] = []
+      }
+      grouped[firstLetter].push(country)
+    })
+    return grouped
+  }
+
+  /**
    * set phone number util to use phone number formatter
    * @param phoneNumberUtil
    */
   public setPhoneNumberUtil(phoneNumberUtil: any) {
     this.phoneNumberUtil = phoneNumberUtil
-  }
-
-  /**
-   * group countries by the first letter of their name
-   * @param array
-   * @returns
-   */
-  public groupCountriesByFirstLetter(array?: CountryInterface[]): GroupedCountries {
-    const grouped: GroupedCountries = {}
-    const countries = array ?? this.getAll()
-    countries.forEach((obj) => {
-      const firstLetter = obj.name.charAt(0).toLowerCase()
-      if (!grouped[firstLetter]) {
-        grouped[firstLetter] = []
-      }
-      grouped[firstLetter].push(obj)
-    })
-    return grouped
   }
 }
 
@@ -118,7 +117,9 @@ declare global {
   }
 }
 
-window.CountryList = CountryList
+if (typeof window !== 'undefined') {
+  window.CountryList = CountryList
+}
 
 export default CountryList
 export { Country, FilterOption }

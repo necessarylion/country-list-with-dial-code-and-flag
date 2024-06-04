@@ -1,3 +1,5 @@
+import { Country } from '..'
+
 interface CountryInterface {
   name: string
   dial_code: string
@@ -17,8 +19,8 @@ interface FilterOption {
   withSecondary: boolean
 }
 
-export type GroupedCountries = {
-  [key: string]: CountryInterface[]
+type GroupedCountries = {
+  [key: string]: Country[]
 }
 
-export { CountryInterface, CountryFlagSvgInterface, FilterOption }
+export { CountryInterface, CountryFlagSvgInterface, FilterOption, GroupedCountries }

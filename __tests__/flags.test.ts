@@ -8,6 +8,12 @@ describe('getList', () => {
   test('getList', () => {
     expect(CountryList.getAll()).toBeInstanceOf(Array)
   })
+
+  test('getCountriesGroupedByName', () => {
+    expect(CountryList.groupCountriesByFirstLetter()).toBeInstanceOf(Object)
+    expect(CountryList.groupCountriesByFirstLetter()['a'][0]).toBeInstanceOf(Country)
+    expect(CountryList.groupCountriesByFirstLetter(CountryList.getAll())).toBeInstanceOf(Object)
+  })
 })
 
 describe('multiple area code', () => {

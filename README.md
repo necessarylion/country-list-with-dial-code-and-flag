@@ -4,7 +4,7 @@
 
 This package provide all country list with their flag emoji, flag svg and dial number code.
 
-## [Full Documentation](https://zin-kyaw-kyaw.gitbook.io/country/)
+## [Full Documentation](https://zin-kyaw-kyaw.gitbook.io/country-flags/)
 
 ## Installation
 
@@ -14,10 +14,37 @@ This package provide all country list with their flag emoji, flag svg and dial n
 npm install country-list-with-dial-code-and-flag
 ```
 
+```ts
+import CountryList from 'country-list-with-dial-code-and-flag'
+
+CountryList.getAll() 
+// Response => Array<Country>
+
+CountryList.findOneByCountryCode('MM') 
+// Response => Country
+
+CountryList.findOneByDialCode('+95') 
+// Response => Country
+
+CountryList.findByDialCode('+95') 
+// Response => Array<Country>
+
+CountryList.findByKeyword('united') 
+// Response => Array<Country>
+```
+
 #### Via CDN
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/country-list-with-dial-code-and-flag/dist/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/country-list-with-dial-code-and-flag@latest/dist/main.js"></script>
+
+https://cdn.jsdelivr.net/npm/country-list-with-dial-code-and-flag@latest/dist/main.js
+```
+
+##### With specific version number
+
+```bash
+https://cdn.jsdelivr.net/npm/country-list-with-dial-code-and-flag@5.0.4/dist/main.js
 ```
 
 ##### Country Flag SVG (optional)

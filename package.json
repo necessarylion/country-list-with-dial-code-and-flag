@@ -1,6 +1,6 @@
 {
   "name": "country-list-with-dial-code-and-flag",
-  "version": "5.0.3",
+  "version": "5.0.4",
   "description": "Country list with dial code and flag",
   "main": "dist/index.js",
   "scripts": {
