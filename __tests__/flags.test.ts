@@ -110,6 +110,13 @@ describe('test svg string', () => {
   })
 })
 
+describe('group countries by first letter', () => {
+  test('should return countries with group by first letter', () => {
+    const result = CountryList.groupCountriesByFirstLetter()
+    expect(result['a']).not.toBeUndefined()
+  })
+})
+
 describe('Phone number formatter', () => {
   test('PhoneNumberFormat', () => {
     const us = CountryList.findOneByCountryCode('US')
