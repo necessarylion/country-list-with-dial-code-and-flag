@@ -10,8 +10,9 @@ describe('getList', () => {
   })
 
   test('getCountriesGroupedByName', () => {
-    expect(CountryList.getCountriesGroupedByName()).toBeInstanceOf(Object)
-    expect(CountryList.getCountriesGroupedByName()['a']).toBeInstanceOf(Array)
+    expect(CountryList.groupCountriesByFirstLetter()).toBeInstanceOf(Object)
+    expect(CountryList.groupCountriesByFirstLetter()['a'][0]).toBeInstanceOf(Country)
+    expect(CountryList.groupCountriesByFirstLetter(CountryList.getAll())).toBeInstanceOf(Object)
   })
 })
 

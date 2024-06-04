@@ -86,9 +86,9 @@ class App {
   /**
    * Group countries by the first letter of their name
    * @param array
-   * @returns
+   * @returns {GroupedCountries}
    */
-  public getCountriesGroupedByName(): GroupedCountries {
+  public groupCountriesByFirstLetter(array?: Country[] | CountryInterface[]): GroupedCountries {
     const grouped: Record<string, Country[]> = {}
     this.getAll().forEach((country) => {
       const firstLetter = country.name.charAt(0).toLowerCase()
@@ -106,24 +106,6 @@ class App {
    */
   public setPhoneNumberUtil(phoneNumberUtil: any) {
     this.phoneNumberUtil = phoneNumberUtil
-  }
-
-  /**
-   * group countries by the first letter of their name
-   * @param array
-   * @returns
-   */
-  public groupCountriesByFirstLetter(array?: CountryInterface[]): GroupedCountries {
-    const grouped: GroupedCountries = {}
-    const countries = array ?? this.getAll()
-    countries.forEach((obj) => {
-      const firstLetter = obj.name.charAt(0).toLowerCase()
-      if (!grouped[firstLetter]) {
-        grouped[firstLetter] = []
-      }
-      grouped[firstLetter].push(obj)
-    })
-    return grouped
   }
 }
 
