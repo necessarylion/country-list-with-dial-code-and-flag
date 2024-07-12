@@ -12,6 +12,10 @@ class Country {
     return this.data.name
   }
 
+  public get localName(): string {
+    return this.data.local_name ?? this.data.name
+  }
+
   public get dialCode(): string {
     return this.data.dial_code
   }

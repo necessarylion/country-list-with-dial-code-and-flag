@@ -9,6 +9,7 @@ interface CountryInterface {
   secondary?: boolean
   area_codes?: Array<string>
   country_code?: string
+  local_name?: string
 }
 
 interface CountryFlagSvgInterface {

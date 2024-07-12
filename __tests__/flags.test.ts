@@ -96,7 +96,13 @@ describe('searchFlag', () => {
   test('Search Flag length', () => {
     const result = CountryList.findByKeyword('Myanm')
     expect(result).toEqual([
-      new Country({ name: 'Myanmar', dial_code: '+95', code: 'MM', flag: '🇲🇲' }),
+      new Country({
+        name: 'Myanmar',
+        dial_code: '+95',
+        code: 'MM',
+        flag: '🇲🇲',
+        local_name: 'မြန်မာ',
+      }),
     ])
   })
 })
