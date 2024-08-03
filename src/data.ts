@@ -288,7 +288,7 @@ const countries: CountryInterface[] = [
   { name: 'Uzbekistan', dial_code: '+998', code: 'UZ', flag: '🇺🇿' },
   { name: 'Vanuatu', dial_code: '+678', code: 'VU', flag: '🇻🇺' },
   { name: 'Venezuela, Bolivarian Republic of', dial_code: '+58', code: 'VE', flag: '🇻🇪' },
-  { name: 'Viet Nam', dial_code: '+84', code: 'VN', flag: '🇻🇳' },
+  { name: 'Vietnam', dial_code: '+84', code: 'VN', flag: '🇻🇳', local_name: 'Việt Nam' },
   { name: 'Virgin Islands, British', dial_code: '+1284', code: 'VG', flag: '🇻🇬' },
   { name: 'Virgin Islands, U.S.', dial_code: '+1340', code: 'VI', flag: '🇻🇮' },
   { name: 'Wallis and Futuna', dial_code: '+681', code: 'WF', flag: '🇼🇫' },
