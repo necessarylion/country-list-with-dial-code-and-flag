@@ -4,7 +4,7 @@ const countries: CountryInterface[] = [
   { name: 'Afghanistan', dial_code: '+93', code: 'AF', flag: '🇦🇫', local_name: 'افغانستان' },
   { name: 'Albania', dial_code: '+355', code: 'AL', flag: '🇦🇱', local_name: 'Shqipëria' },
   { name: 'Algeria', dial_code: '+213', code: 'DZ', flag: '🇩🇿', local_name: 'Dzayer' },
-  { name: 'AmericanSamoa', dial_code: '+1684', code: 'AS', flag: '🇦🇸' },
+  { name: 'American Samoa', dial_code: '+1684', code: 'AS', flag: '🇦🇸' },
   { name: 'Andorra', dial_code: '+376', code: 'AD', flag: '🇦🇩', local_name: 'Andorra' },
   { name: 'Angola', dial_code: '+244', code: 'AO', flag: '🇦🇴', local_name: 'Angola' },
   { name: 'Anguilla', dial_code: '+1264', code: 'AI', flag: '🇦🇮', local_name: 'Anguilla' },
