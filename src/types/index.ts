@@ -10,6 +10,7 @@ interface CountryInterface {
   area_codes?: Array<string>
   country_code?: string
   local_name?: string
+  part_of?: string[]
 }
 
 interface CountryFlagSvgInterface {

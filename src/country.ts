@@ -48,6 +48,10 @@ class Country {
     return this.data.country_code ?? this.data.dial_code
   }
 
+  public get partOf(): string[] {
+    return this.data.part_of ?? []
+  }
+
   public formatPhoneNumber(phoneNumber: string | number, format?: any) {
     if (!CountryList.phoneNumberUtil) {
       console.warn(
