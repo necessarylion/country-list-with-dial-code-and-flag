@@ -292,7 +292,7 @@ const countries: CountryInterface[] = [
   { name: 'Virgin Islands, British', dial_code: '+1284', code: 'VG', flag: '🇻🇬' },
   { name: 'Virgin Islands, U.S.', dial_code: '+1340', code: 'VI', flag: '🇻🇮' },
   { name: 'Wallis and Futuna', dial_code: '+681', code: 'WF', flag: '🇼🇫' },
-  { name: 'Western Sarah', dial_code: '+212', code: 'EH', flag: '🇪🇭' },
+  { name: 'Western Sahara', dial_code: '+212', code: 'EH', flag: '🇪🇭' },
   { name: 'Yemen', dial_code: '+967', code: 'YE', flag: '🇾🇪', local_name: 'اليمن' },
   { name: 'Zambia', dial_code: '+260', code: 'ZM', flag: '🇿🇲' },
   { name: 'Zimbabwe', dial_code: '+263', code: 'ZW', flag: '🇿🇼' },
