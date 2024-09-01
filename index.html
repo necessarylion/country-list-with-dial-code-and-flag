@@ -2,22 +2,56 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Country Flag</title>
     <style>
       body {
         font-family: 'Source Sans Pro', sans-serif;
-        background-color: #424243;
+        background-color: #e0e0e0;
+      }
+      #country-list {
+        display: flex;
+        flex-flow: row wrap;
+        position: relative;
+        gap: 10px;
+      }
+      .flag {
+        flex: 0 1 50px;
+      }
+      svg {
+        width: 50px;
+      }
+      .svg {
+        font-size: 50px;
+        line-height: 0.8;
+      }
+      .name {
+        text-align: center;
+        font-size: 11px;
+        font-weight: bold;
+        font-family: monospace;
+        color: black;
       }
     </style>
   </head>
   <body>
-    <div id="mm"></div>
+    <div id="country-list"></div>
   </body>
   <script src="main.js"></script>
   <script src="country-flag-svg.js"></script>
   <script>
-   const mm = CountryList.findOneByCountryCode('mm')
-   document.getElementById('mm').innerHTML = CountryFlagSvg[mm.code]
+    let html = ''
+    const countries = CountryList.getAll()
+    countries.forEach((country) => {
+      const flag = CountryFlagSvg[country.code]
+      if(country.flag) {
+      html += `<div class="flag">
+        <div class="svg">${country.flag}</div>
+        <div class="name">${country.code}</div>
+        </div>`
+      }
+    })
+    document.getElementById('country-list').innerHTML = html
+    //  document.getElementById('mm').innerHTML = CountryFlagSvg[mm.code]
   </script>
 </html>
