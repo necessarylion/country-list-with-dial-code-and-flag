@@ -21,9 +21,6 @@ module.exports = {
     maxAssetSize: 512000
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: './index.html'
-    }),
   ],
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
