@@ -102,6 +102,9 @@ describe('searchFlag', () => {
         code: 'MM',
         flag: '🇲🇲',
         local_name: 'မြန်မာ',
+        currency: 'Myanmar Kyat',
+        currency_code: 'MMK',
+        currency_symbol: 'K',
       }),
     ])
   })

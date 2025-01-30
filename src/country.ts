@@ -52,6 +52,18 @@ class Country {
     return this.data.part_of ?? []
   }
 
+  public get currency(): string {
+    return this.data.currency ?? ''
+  }
+
+  public get currencyCode(): string {
+    return this.data.currency_code ?? ''
+  }
+
+  public get currencySymbol(): string {
+    return this.data.currency_symbol ?? ''
+  }
+
   public formatPhoneNumber(phoneNumber: string | number, format?: any) {
     if (!CountryList.phoneNumberUtil) {
       console.warn(
