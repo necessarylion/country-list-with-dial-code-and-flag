@@ -11,6 +11,9 @@ interface CountryInterface {
   country_code?: string
   local_name?: string
   part_of?: string[]
+  currency?: string
+  currency_code?: string
+  currency_symbol?: string
 }
 
 interface CountryFlagSvgInterface {

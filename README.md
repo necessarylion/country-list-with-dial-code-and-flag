@@ -31,6 +31,12 @@ CountryList.findByDialCode('+95')
 
 CountryList.findByKeyword('united') 
 // Response => Array<Country>
+
+CountryList.findByCurrencyCode('TRY') 
+// Response => Array<Country>
+
+CountryList.findOneByCurrencyCode('TRY') 
+// Response => Country
 ```
 
 #### Via CDN

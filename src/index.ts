@@ -71,6 +71,33 @@ class App {
   }
 
   /**
+   * Find list of countries by currency code, eg. USD, TRY, EUR
+   *
+   * @param {string} code
+   * @returns {Array<Country>}
+   */
+  public findByCurrencyCode(code: string, option?: FilterOption): Array<Country> {
+    return this.getAll(option).filter(
+      (country: Country) => country.currencyCode.toLowerCase() === code.toLowerCase(),
+    )
+  }
+
+  /**
+   * find one by currency code, eg. USD, TRY, EUR
+   *
+   * @param {string} currencyCode
+   * @returns {Country | undefined}
+   */
+  public findOneByCurrencyCode(currencyCode: string): Country | undefined {
+    const filteredCountries = this.findByCurrencyCode(currencyCode)
+    const preferred = filteredCountries.find((country: Country) => country.preferred)
+    if (preferred) {
+      return preferred
+    }
+    return filteredCountries[0] ?? undefined
+  }
+
+  /**
    * get all countries
    *
    * @returns {Array<Country>}
