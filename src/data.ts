@@ -386,7 +386,7 @@ const countries: CountryInterface[] = [
   },
   {
     name: 'Cayman Islands',
-    dial_code: '+345',
+    dial_code: '+1345',
     code: 'KY',
     flag: '🇰🇾',
     part_of: ['GB'],
