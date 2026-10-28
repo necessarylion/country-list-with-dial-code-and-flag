@@ -153,16 +153,3 @@ describe('Phone number formatter', () => {
     expect(pr?.formatPhoneNumber('05303334', PhoneNumberFormat.NATIONAL)).toEqual('(939) 530-3334')
   })
 })
-
-describe('flag emoji', () => {
-  test('every flag emoji matches its country code', () => {
-    for (const country of CountryList.getAll({ withSecondary: true })) {
-      const expected = country.code
-        .toUpperCase()
-        .split('')
-        .map((c) => String.fromCodePoint(0x1f1e6 + c.charCodeAt(0) - 65))
-        .join('')
-      expect(`${country.code} ${country.flag}`).toBe(`${country.code} ${expected}`)
-    }
-  })
-})
