@@ -1121,7 +1121,7 @@ const countries: CountryInterface[] = [
     name: 'Israel',
     dial_code: '+972',
     code: 'IL',
-    flag: '🇮',
+    flag: '🇮🇱',
     local_name: 'ישראל',
     currency: 'Israeli New Shekel',
     currency_code: 'ILS',
